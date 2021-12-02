@@ -9,6 +9,6 @@ namespace SimpleShapes.Movement_Interfaces
 {
     interface IMoveBoxClockwise
     {
-        void MoveBoxClockwise();
+        void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop);
     }
 }

@@ -25,6 +25,7 @@ namespace SimpleShapes
             g.DrawPolygon(pen, vertices);
         }
 
+
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
             if (movingRight)
@@ -75,18 +76,9 @@ namespace SimpleShapes
             g.DrawPolygon(pen, vertices);
         }
 
-        //public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override void MoveY(Graphics g, Pen pen)
-        //{
-        //    vertices[0].Y += 10;
-        //    vertices[1].Y += 10;
-        //    vertices[2].Y += 10;
-
-        //    g.DrawPolygon(pen, vertices);
-        //}
+        public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

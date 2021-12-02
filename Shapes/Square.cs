@@ -57,5 +57,9 @@ namespace SimpleShapes
 
             g.DrawRectangle(pen, X, Y, _edge, _edge);
         }
+        public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
