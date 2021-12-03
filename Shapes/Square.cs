@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace SimpleShapes
+namespace SimpleShapes.Shapes
 {
     class Square : Shape
     {
@@ -15,8 +15,8 @@ namespace SimpleShapes
 
         public Square(int x, int y, int edge)
         {
-            X = x;
-            Y = y;
+            X = x - edge / 2;
+            Y = y - edge / 2;
             _edge = edge;
         }
 
@@ -33,33 +33,58 @@ namespace SimpleShapes
             if (!movingRight)
                 X -= 10;
 
-            if (X + _edge == borderRight)
+            if (X + _edge >= borderRight)
                 movingRight = !movingRight;
 
-            if (X == borderLeft)
+            if (X <= borderLeft)
                 movingRight = true;
 
             g.DrawRectangle(pen, X, Y, _edge, _edge);
         }
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
-            if(movingDown)
+            if (movingDown)
                 Y += 10;
 
             if (!movingDown)
                 Y -= 10;
 
-            if (Y + _edge == borderBottom)
+            if (Y + _edge >= borderBottom)
                 movingDown = !movingDown;
 
-            if (Y == borderTop)
+            if (Y <= borderTop)
                 movingDown = true;
 
             g.DrawRectangle(pen, X, Y, _edge, _edge);
         }
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            throw new NotImplementedException();
+            if (movingRight)
+                X += 10;
+
+            if (!movingRight)
+                X -= 10;
+
+            if (movingDown)
+                Y += 10;
+
+            if (!movingDown)
+                Y -= 10;
+
+            if (X + _edge == borderRight) // & Y 
+                movingDown = true;
+
+            if (Y + _edge == borderBottom)
+                movingRight = !movingRight;
+
+            if (X == borderLeft)
+                movingDown = !movingDown;
+
+            if (Y == borderTop)
+                movingRight = true;
+
+
+            g.DrawRectangle(pen, X, Y, _edge, _edge);
         }
     }
 }

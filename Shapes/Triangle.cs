@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace SimpleShapes
+namespace SimpleShapes.Shapes
 {
     class Triangle : Shape
     {
-        private int _edge;
         private Point[] vertices = new Point[3];
+        private int _edge;
         public Triangle(int x, int y, int edge)
         {
             _edge = edge;
 
-            vertices[0] = new Point(x, y);
+            vertices[0] = new Point(x, y - edge / 2);
             vertices[1] = new Point(x + edge / 2, y + edge);
             vertices[2] = new Point(x - edge / 2, y + edge);
         }
@@ -24,7 +24,6 @@ namespace SimpleShapes
         {
             g.DrawPolygon(pen, vertices);
         }
-
 
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
@@ -42,10 +41,10 @@ namespace SimpleShapes
                 vertices[2].X -= 10;
             }
 
-            if (vertices[1].X == borderRight)
+            if (vertices[1].X >= borderRight)
                 movingRight = !movingRight;
 
-            if (vertices[2].X == borderLeft)
+            if (vertices[2].X <= borderLeft)
                 movingRight = true;
 
             g.DrawPolygon(pen, vertices);
@@ -67,10 +66,10 @@ namespace SimpleShapes
                 vertices[2].Y -= 10;
             }
 
-            if (vertices[2].Y == borderBottom)
+            if (vertices[2].Y >= borderBottom)
                 movingDown = !movingDown;
 
-            if (vertices[0].Y == borderTop)
+            if (vertices[0].Y <= borderTop)
                 movingDown = true;
 
             g.DrawPolygon(pen, vertices);

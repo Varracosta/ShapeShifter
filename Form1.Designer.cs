@@ -38,67 +38,101 @@ namespace SimpleShapes
             this.StopBtn = new System.Windows.Forms.Button();
             this.SquareRadBtn = new System.Windows.Forms.RadioButton();
             this.TriangleRadBtn = new System.Windows.Forms.RadioButton();
+            this.MoveBoxClockWiseBtn = new System.Windows.Forms.Button();
+            this.DimensionsTxtBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CircleRadBtn = new System.Windows.Forms.RadioButton();
+            this.HexagonRadBtn = new System.Windows.Forms.RadioButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.ColorPBox = new System.Windows.Forms.PictureBox();
+            this.colorLbl = new System.Windows.Forms.Label();
+            this.choseShapeLbl = new System.Windows.Forms.Label();
+            this.animationsLbl = new System.Windows.Forms.Label();
+            this.MoveCircleClockwiseBtn = new System.Windows.Forms.Button();
+            this.txtFileUploadLbl = new System.Windows.Forms.Label();
+            this.UploadBtn = new System.Windows.Forms.Button();
+            this.TxtFileTxtBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.SlowerMoveRateBtn = new System.Windows.Forms.Button();
+            this.FasterMoveRateBtn = new System.Windows.Forms.Button();
+            this.speedLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorPBox)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // CreateBtn
             // 
-            this.CreateBtn.Location = new System.Drawing.Point(25, 473);
+            this.CreateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CreateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CreateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CreateBtn.Location = new System.Drawing.Point(11, 133);
             this.CreateBtn.Name = "CreateBtn";
-            this.CreateBtn.Size = new System.Drawing.Size(95, 43);
+            this.CreateBtn.Size = new System.Drawing.Size(76, 35);
             this.CreateBtn.TabIndex = 0;
             this.CreateBtn.Text = "Create";
-            this.CreateBtn.UseVisualStyleBackColor = true;
+            this.CreateBtn.UseVisualStyleBackColor = false;
             this.CreateBtn.Click += new System.EventHandler(this.CreateBtn_Click);
             // 
             // MoveXBtn
             // 
-            this.MoveXBtn.Location = new System.Drawing.Point(285, 387);
+            this.MoveXBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveXBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveXBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MoveXBtn.Location = new System.Drawing.Point(130, 65);
             this.MoveXBtn.Name = "MoveXBtn";
-            this.MoveXBtn.Size = new System.Drawing.Size(79, 43);
+            this.MoveXBtn.Size = new System.Drawing.Size(86, 43);
             this.MoveXBtn.TabIndex = 1;
-            this.MoveXBtn.Text = "MoveX";
-            this.MoveXBtn.UseVisualStyleBackColor = true;
+            this.MoveXBtn.Text = "Horizontaly";
+            this.MoveXBtn.UseVisualStyleBackColor = false;
             this.MoveXBtn.Click += new System.EventHandler(this.MoveXBtn_Click);
             // 
             // PictureBox
             // 
             this.PictureBox.BackColor = System.Drawing.Color.White;
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBox.Location = new System.Drawing.Point(25, 22);
+            this.PictureBox.Location = new System.Drawing.Point(12, 37);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(450, 350);
+            this.PictureBox.Size = new System.Drawing.Size(450, 450);
             this.PictureBox.TabIndex = 2;
             this.PictureBox.TabStop = false;
             // 
             // timer1
             // 
+            this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MoveYBtn
             // 
-            this.MoveYBtn.Location = new System.Drawing.Point(398, 387);
+            this.MoveYBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveYBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveYBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MoveYBtn.Location = new System.Drawing.Point(227, 65);
             this.MoveYBtn.Name = "MoveYBtn";
-            this.MoveYBtn.Size = new System.Drawing.Size(77, 43);
+            this.MoveYBtn.Size = new System.Drawing.Size(85, 43);
             this.MoveYBtn.TabIndex = 3;
-            this.MoveYBtn.Text = "MoveY";
-            this.MoveYBtn.UseVisualStyleBackColor = true;
+            this.MoveYBtn.Text = "Verticaly";
+            this.MoveYBtn.UseVisualStyleBackColor = false;
             this.MoveYBtn.Click += new System.EventHandler(this.MoveYBtn_Click);
             // 
             // StopBtn
             // 
-            this.StopBtn.Location = new System.Drawing.Point(392, 473);
+            this.StopBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.StopBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.StopBtn.Location = new System.Drawing.Point(13, 122);
             this.StopBtn.Name = "StopBtn";
-            this.StopBtn.Size = new System.Drawing.Size(83, 43);
+            this.StopBtn.Size = new System.Drawing.Size(90, 47);
             this.StopBtn.TabIndex = 4;
             this.StopBtn.Text = "Stop";
-            this.StopBtn.UseVisualStyleBackColor = true;
+            this.StopBtn.UseVisualStyleBackColor = false;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
             // 
             // SquareRadBtn
             // 
             this.SquareRadBtn.AutoSize = true;
-            this.SquareRadBtn.Location = new System.Drawing.Point(25, 387);
+            this.SquareRadBtn.Location = new System.Drawing.Point(11, 46);
             this.SquareRadBtn.Name = "SquareRadBtn";
             this.SquareRadBtn.Size = new System.Drawing.Size(59, 17);
             this.SquareRadBtn.TabIndex = 5;
@@ -109,7 +143,7 @@ namespace SimpleShapes
             // TriangleRadBtn
             // 
             this.TriangleRadBtn.AutoSize = true;
-            this.TriangleRadBtn.Location = new System.Drawing.Point(25, 422);
+            this.TriangleRadBtn.Location = new System.Drawing.Point(11, 69);
             this.TriangleRadBtn.Name = "TriangleRadBtn";
             this.TriangleRadBtn.Size = new System.Drawing.Size(63, 17);
             this.TriangleRadBtn.TabIndex = 6;
@@ -117,21 +151,236 @@ namespace SimpleShapes
             this.TriangleRadBtn.Text = "Triangle";
             this.TriangleRadBtn.UseVisualStyleBackColor = true;
             // 
+            // MoveBoxClockWiseBtn
+            // 
+            this.MoveBoxClockWiseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveBoxClockWiseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveBoxClockWiseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MoveBoxClockWiseBtn.Location = new System.Drawing.Point(130, 126);
+            this.MoveBoxClockWiseBtn.Name = "MoveBoxClockWiseBtn";
+            this.MoveBoxClockWiseBtn.Size = new System.Drawing.Size(86, 43);
+            this.MoveBoxClockWiseBtn.TabIndex = 7;
+            this.MoveBoxClockWiseBtn.Text = "Box ClockWise";
+            this.MoveBoxClockWiseBtn.UseVisualStyleBackColor = false;
+            this.MoveBoxClockWiseBtn.Click += new System.EventHandler(this.MoveBoxClockWiseBtn_Click);
+            // 
+            // DimensionsTxtBox
+            // 
+            this.DimensionsTxtBox.Location = new System.Drawing.Point(128, 99);
+            this.DimensionsTxtBox.Name = "DimensionsTxtBox";
+            this.DimensionsTxtBox.Size = new System.Drawing.Size(50, 20);
+            this.DimensionsTxtBox.TabIndex = 8;
+            this.DimensionsTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.DimensionsTxtBox_Validating);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Edge/Diameter (px): ";
+            // 
+            // CircleRadBtn
+            // 
+            this.CircleRadBtn.AutoSize = true;
+            this.CircleRadBtn.Location = new System.Drawing.Point(130, 46);
+            this.CircleRadBtn.Name = "CircleRadBtn";
+            this.CircleRadBtn.Size = new System.Drawing.Size(51, 17);
+            this.CircleRadBtn.TabIndex = 10;
+            this.CircleRadBtn.TabStop = true;
+            this.CircleRadBtn.Text = "Circle";
+            this.CircleRadBtn.UseVisualStyleBackColor = true;
+            // 
+            // HexagonRadBtn
+            // 
+            this.HexagonRadBtn.AutoSize = true;
+            this.HexagonRadBtn.Location = new System.Drawing.Point(130, 69);
+            this.HexagonRadBtn.Name = "HexagonRadBtn";
+            this.HexagonRadBtn.Size = new System.Drawing.Size(68, 17);
+            this.HexagonRadBtn.TabIndex = 11;
+            this.HexagonRadBtn.TabStop = true;
+            this.HexagonRadBtn.Text = "Hexagon";
+            this.HexagonRadBtn.UseVisualStyleBackColor = true;
+            // 
+            // ColorPBox
+            // 
+            this.ColorPBox.BackColor = System.Drawing.Color.White;
+            this.ColorPBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ColorPBox.Location = new System.Drawing.Point(251, 99);
+            this.ColorPBox.Name = "ColorPBox";
+            this.ColorPBox.Size = new System.Drawing.Size(27, 20);
+            this.ColorPBox.TabIndex = 12;
+            this.ColorPBox.TabStop = false;
+            this.ColorPBox.Click += new System.EventHandler(this.ColorPBox_Click);
+            // 
+            // colorLbl
+            // 
+            this.colorLbl.AutoSize = true;
+            this.colorLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.colorLbl.Location = new System.Drawing.Point(200, 102);
+            this.colorLbl.Name = "colorLbl";
+            this.colorLbl.Size = new System.Drawing.Size(34, 13);
+            this.colorLbl.TabIndex = 13;
+            this.colorLbl.Text = "Color:";
+            // 
+            // choseShapeLbl
+            // 
+            this.choseShapeLbl.AutoSize = true;
+            this.choseShapeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.choseShapeLbl.Location = new System.Drawing.Point(10, 15);
+            this.choseShapeLbl.Name = "choseShapeLbl";
+            this.choseShapeLbl.Size = new System.Drawing.Size(103, 16);
+            this.choseShapeLbl.TabIndex = 14;
+            this.choseShapeLbl.Text = "Chose shape:";
+            // 
+            // animationsLbl
+            // 
+            this.animationsLbl.AutoSize = true;
+            this.animationsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.animationsLbl.Location = new System.Drawing.Point(8, 16);
+            this.animationsLbl.Name = "animationsLbl";
+            this.animationsLbl.Size = new System.Drawing.Size(62, 16);
+            this.animationsLbl.TabIndex = 15;
+            this.animationsLbl.Text = "Move it:";
+            // 
+            // MoveCircleClockwiseBtn
+            // 
+            this.MoveCircleClockwiseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveCircleClockwiseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MoveCircleClockwiseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MoveCircleClockwiseBtn.Location = new System.Drawing.Point(222, 126);
+            this.MoveCircleClockwiseBtn.Name = "MoveCircleClockwiseBtn";
+            this.MoveCircleClockwiseBtn.Size = new System.Drawing.Size(86, 43);
+            this.MoveCircleClockwiseBtn.TabIndex = 16;
+            this.MoveCircleClockwiseBtn.Text = "Circle ClockWise";
+            this.MoveCircleClockwiseBtn.UseVisualStyleBackColor = false;
+            this.MoveCircleClockwiseBtn.Click += new System.EventHandler(this.MoveCircleClockwiseBtn_Click);
+            // 
+            // txtFileUploadLbl
+            // 
+            this.txtFileUploadLbl.AutoSize = true;
+            this.txtFileUploadLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFileUploadLbl.Location = new System.Drawing.Point(489, 435);
+            this.txtFileUploadLbl.Name = "txtFileUploadLbl";
+            this.txtFileUploadLbl.Size = new System.Drawing.Size(107, 16);
+            this.txtFileUploadLbl.TabIndex = 17;
+            this.txtFileUploadLbl.Text = "Upload txt file:";
+            // 
+            // UploadBtn
+            // 
+            this.UploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.UploadBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.UploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UploadBtn.Location = new System.Drawing.Point(684, 460);
+            this.UploadBtn.Name = "UploadBtn";
+            this.UploadBtn.Size = new System.Drawing.Size(75, 23);
+            this.UploadBtn.TabIndex = 18;
+            this.UploadBtn.Text = "Load";
+            this.UploadBtn.UseVisualStyleBackColor = false;
+            // 
+            // TxtFileTxtBox
+            // 
+            this.TxtFileTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TxtFileTxtBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtFileTxtBox.Location = new System.Drawing.Point(492, 463);
+            this.TxtFileTxtBox.Name = "TxtFileTxtBox";
+            this.TxtFileTxtBox.Size = new System.Drawing.Size(164, 20);
+            this.TxtFileTxtBox.TabIndex = 19;
+            this.TxtFileTxtBox.Text = "Chose file...";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CreateBtn);
+            this.panel1.Controls.Add(this.SquareRadBtn);
+            this.panel1.Controls.Add(this.TriangleRadBtn);
+            this.panel1.Controls.Add(this.DimensionsTxtBox);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.CircleRadBtn);
+            this.panel1.Controls.Add(this.choseShapeLbl);
+            this.panel1.Controls.Add(this.HexagonRadBtn);
+            this.panel1.Controls.Add(this.colorLbl);
+            this.panel1.Controls.Add(this.ColorPBox);
+            this.panel1.Location = new System.Drawing.Point(480, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(332, 181);
+            this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.speedLbl);
+            this.panel2.Controls.Add(this.FasterMoveRateBtn);
+            this.panel2.Controls.Add(this.SlowerMoveRateBtn);
+            this.panel2.Controls.Add(this.MoveBoxClockWiseBtn);
+            this.panel2.Controls.Add(this.MoveXBtn);
+            this.panel2.Controls.Add(this.MoveYBtn);
+            this.panel2.Controls.Add(this.StopBtn);
+            this.panel2.Controls.Add(this.animationsLbl);
+            this.panel2.Controls.Add(this.MoveCircleClockwiseBtn);
+            this.panel2.Location = new System.Drawing.Point(480, 224);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(332, 197);
+            this.panel2.TabIndex = 21;
+            // 
+            // SlowerMoveRateBtn
+            // 
+            this.SlowerMoveRateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SlowerMoveRateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SlowerMoveRateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SlowerMoveRateBtn.Location = new System.Drawing.Point(13, 83);
+            this.SlowerMoveRateBtn.Name = "SlowerMoveRateBtn";
+            this.SlowerMoveRateBtn.Size = new System.Drawing.Size(42, 25);
+            this.SlowerMoveRateBtn.TabIndex = 17;
+            this.SlowerMoveRateBtn.Text = "-";
+            this.SlowerMoveRateBtn.UseVisualStyleBackColor = false;
+            this.SlowerMoveRateBtn.Click += new System.EventHandler(this.SlowerMoveRateBtn_Click);
+            // 
+            // FasterMoveRateBtn
+            // 
+            this.FasterMoveRateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.FasterMoveRateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FasterMoveRateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FasterMoveRateBtn.Location = new System.Drawing.Point(61, 83);
+            this.FasterMoveRateBtn.Name = "FasterMoveRateBtn";
+            this.FasterMoveRateBtn.Size = new System.Drawing.Size(42, 25);
+            this.FasterMoveRateBtn.TabIndex = 18;
+            this.FasterMoveRateBtn.Text = "+";
+            this.FasterMoveRateBtn.UseVisualStyleBackColor = false;
+            this.FasterMoveRateBtn.Click += new System.EventHandler(this.FasterMoveRateBtn_Click);
+            // 
+            // speedLbl
+            // 
+            this.speedLbl.AutoSize = true;
+            this.speedLbl.Location = new System.Drawing.Point(13, 64);
+            this.speedLbl.Name = "speedLbl";
+            this.speedLbl.Size = new System.Drawing.Size(41, 13);
+            this.speedLbl.TabIndex = 19;
+            this.speedLbl.Text = "Speed:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 528);
-            this.Controls.Add(this.TriangleRadBtn);
-            this.Controls.Add(this.SquareRadBtn);
-            this.Controls.Add(this.StopBtn);
-            this.Controls.Add(this.MoveYBtn);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(824, 518);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TxtFileTxtBox);
+            this.Controls.Add(this.UploadBtn);
+            this.Controls.Add(this.txtFileUploadLbl);
             this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.MoveXBtn);
-            this.Controls.Add(this.CreateBtn);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Draw And Move Shapes!";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorPBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +396,25 @@ namespace SimpleShapes
         private System.Windows.Forms.Button StopBtn;
         private System.Windows.Forms.RadioButton SquareRadBtn;
         private System.Windows.Forms.RadioButton TriangleRadBtn;
+        private System.Windows.Forms.Button MoveBoxClockWiseBtn;
+        private System.Windows.Forms.TextBox DimensionsTxtBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton CircleRadBtn;
+        private System.Windows.Forms.RadioButton HexagonRadBtn;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.PictureBox ColorPBox;
+        private System.Windows.Forms.Label colorLbl;
+        private System.Windows.Forms.Label choseShapeLbl;
+        private System.Windows.Forms.Label animationsLbl;
+        private System.Windows.Forms.Button MoveCircleClockwiseBtn;
+        private System.Windows.Forms.Label txtFileUploadLbl;
+        private System.Windows.Forms.Button UploadBtn;
+        private System.Windows.Forms.TextBox TxtFileTxtBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button FasterMoveRateBtn;
+        private System.Windows.Forms.Button SlowerMoveRateBtn;
+        private System.Windows.Forms.Label speedLbl;
     }
 }
 

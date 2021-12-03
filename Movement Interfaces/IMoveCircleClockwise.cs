@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleShapes.Movement_Interfaces
 {
-    interface IMoveClockwise
+    interface IMoveCircleClockwise
     {
     }
 }
