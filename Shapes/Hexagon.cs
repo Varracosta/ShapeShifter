@@ -33,20 +33,10 @@ namespace SimpleShapes.Shapes
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
             if (movingRight)
-            {
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i].X += 10;
-                }
-            }
+                MoveVerticesXAxis(vertices, 10);
 
             if (!movingRight)
-            {
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i].X -= 10;
-                }
-            }
+                MoveVerticesXAxis(vertices, -10);
 
             if (vertices[2].X >= borderRight)
                 movingRight = !movingRight;
@@ -59,20 +49,11 @@ namespace SimpleShapes.Shapes
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
             if (movingDown)
-            {
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i].Y += 10;
-                }
-            }
+                MoveVerticesYAxis(vertices, 10);
+ 
 
             if (!movingDown)
-            {
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i].Y -= 10;
-                }
-            }
+                MoveVerticesYAxis(vertices, -10);
 
             if (vertices[4].Y >= borderBottom)
                 movingDown = !movingDown;
@@ -85,12 +66,35 @@ namespace SimpleShapes.Shapes
 
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            throw new NotImplementedException();
+            if (movingRight)
+                MoveVerticesXAxis(vertices, 10);
+
+            if (vertices[2].X + _edge >= borderRight)
+            {
+                MoveVerticesYAxis(vertices, 10);
+                movingRight = false;
+            }
+
+            if (vertices[4].Y + _edge >= borderBottom)
+            {
+                MoveVerticesXAxis(vertices, -10);
+                movingDown = false;
+            }
+
+            if (vertices[5].X <= borderLeft)
+                MoveVerticesYAxis(vertices, -10);
+
+            if (vertices[0].Y <= borderTop)
+                movingRight = true;
+
+            g.DrawPolygon(pen, vertices);
         }
 
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
-            throw new NotImplementedException();
+            MoveVerticesCircular(vertices);
+
+            g.DrawPolygon(pen, vertices);
         }
     }
 }

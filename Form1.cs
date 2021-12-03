@@ -30,7 +30,7 @@ namespace SimpleShapes
         int borderLeft = 0;
         int borderTop = 0;
         int borderBottom;
-        int radius = 100;
+        int radius = 5;
 
         int startX;
         int startY;
@@ -129,7 +129,7 @@ namespace SimpleShapes
                     break;
                 case Movement.BoxClockwise:
                     shape.MoveBoxClockwise(graphics, pen, 
-                            borderRight - 100, borderBottom - 100, borderLeft + 100, borderTop + 100);
+                            borderRight - 50, borderBottom - 50, borderLeft + 50, borderTop + 50);
                     break;
                 case Movement.CircleClockwise:
                     shape.MoveCircleClockwise(graphics, pen, radius);

@@ -9,87 +9,97 @@ namespace SimpleShapes.Shapes
 {
     class Square : Shape
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int _x { get; set; }
+        public int _y { get; set; }
         private int _edge;
         private double a;
 
         public Square(int x, int y, int edge)
         {
-            X = x - edge / 2;
-            Y = y - edge / 2;
+            _x = x - edge / 2;
+            _y = y - edge / 2;
             _edge = edge;
         }
 
         public override void Draw(Graphics g, Pen pen)
         {
-            g.DrawRectangle(pen, X, Y, _edge, _edge);
+            g.DrawRectangle(pen, _x, _y, _edge, _edge);
         }
 
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
             if (movingRight)
-                X += 10;
+                _x += 10;
             else
-                X -= 10;
+                _x -= 10;
 
-            if (X + _edge >= borderRight)
+            if (_x + _edge >= borderRight)
                 movingRight = !movingRight;
 
-            if (X <= borderLeft)
+            if (_x <= borderLeft)
                 movingRight = true;
 
-            g.DrawRectangle(pen, X, Y, _edge, _edge);
+            g.DrawRectangle(pen, _x, _y, _edge, _edge);
         }
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
             if (movingDown)
-                Y += 10;
+                _y += 10;
             else
-                Y -= 10;
+                _y -= 10;
 
-            if (Y + _edge >= borderBottom)
+            if (_y + _edge >= borderBottom)
                 movingDown = !movingDown;
 
-            if (Y <= borderTop)
+            if (_y <= borderTop)
                 movingDown = true;
 
-            g.DrawRectangle(pen, X, Y, _edge, _edge);
+            g.DrawRectangle(pen, _x, _y, _edge, _edge);
         }
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            if (movingRight)
-                X += 10;
+            //Was trying to create more elegant way to move a shape:
 
-            if (X + _edge >= borderRight)
+            //if (steps < maxSteps)
+            //{
+            //    pathMovement[counter] += 10;
+            //    steps++;
+            //}
+            //else
+            //    counter++;
+
+            if (movingRight)
+                _x += 10;
+
+            if (_x + _edge >= borderRight)
             {
-                Y += 10;
+                _y += 10;
                 movingRight = false;
             }
 
-            if(Y + _edge >= borderBottom)
+            if (_y + _edge >= borderBottom)
             {
-                X -= 10;
+                _x -= 10;
                 movingDown = false;
             }
 
-            if(X <= borderLeft)
-                Y -= 10;
+            if (_x <= borderLeft)
+                _y -= 10;
 
-            if(Y <= borderTop)
+            if (_y <= borderTop)
                 movingRight = true;
 
-            g.DrawRectangle(pen, X, Y, _edge, _edge);
+            g.DrawRectangle(pen, _x, _y, _edge, _edge);
         }
 
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
-            X += (int)(5 * Math.Cos(a));
-            Y += (int)(5 * Math.Sin(a));
+            _x += (int)(radius * Math.Cos(a));
+            _y += (int)(radius * Math.Sin(a));
 
             a += 0.1;
 
-            g.DrawRectangle(pen, X, Y, _edge, _edge);
+            g.DrawRectangle(pen, _x, _y, _edge, _edge);
         }
     }
 }

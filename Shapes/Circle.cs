@@ -12,6 +12,8 @@ namespace SimpleShapes.Shapes
         private int _x;
         private int _y;
         private int _diameter;
+        private double a;
+
         public Circle(int x, int y, int diameter)
         {
             _x = x - diameter / 2;
@@ -59,12 +61,37 @@ namespace SimpleShapes.Shapes
         }
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            throw new NotImplementedException();
+            if (movingRight)
+                _x += 10;
+
+            if (_x + _diameter >= borderRight)
+            {
+                _y += 10;
+                movingRight = false;
+            }
+
+            if (_y + _diameter >= borderBottom)
+            {
+                _x -= 10;
+                movingDown = false;
+            }
+
+            if (_x <= borderLeft)
+                _y -= 10;
+
+            if (_y <= borderTop)
+                movingRight = true;
+
+            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
         }
 
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
-            throw new NotImplementedException();
+            _x += (int)(5 * Math.Cos(a));
+            _y += (int)(5 * Math.Sin(a));
+            a += 0.1;
+
+            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
         }
     }
 }
