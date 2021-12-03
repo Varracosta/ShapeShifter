@@ -11,13 +11,17 @@ namespace SimpleShapes.Shapes
     {
         private Point[] vertices = new Point[3];
         private int _edge;
+        private int _x;
+        private int _y;
         public Triangle(int x, int y, int edge)
         {
             _edge = edge;
+            _x = x;
+            _y = y - edge / 2;
 
-            vertices[0] = new Point(x, y - edge / 2);
-            vertices[1] = new Point(x + edge / 2, y + edge);
-            vertices[2] = new Point(x - edge / 2, y + edge);
+            vertices[0] = new Point(_x, _y);
+            vertices[1] = new Point(_x + edge / 2, _y + edge);
+            vertices[2] = new Point(_x - edge / 2, _y + edge);
         }
 
         public override void Draw(Graphics g, Pen pen)

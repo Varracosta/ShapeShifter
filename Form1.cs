@@ -82,6 +82,11 @@ namespace SimpleShapes
                 shape = new Circle(startX, startY, edge);
             }
 
+            if (HexagonRadBtn.Checked)
+            {
+                shape = new Hexagon(startX, startY, edge);
+            }
+
             shape.Draw(graphics, pen);
         }
 
