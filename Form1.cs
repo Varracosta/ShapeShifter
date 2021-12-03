@@ -30,6 +30,7 @@ namespace SimpleShapes
         int borderLeft = 0;
         int borderTop = 0;
         int borderBottom;
+        int radius = 100;
 
         int startX;
         int startY;
@@ -108,7 +109,8 @@ namespace SimpleShapes
         }
         private void MoveCircleClockwiseBtn_Click(object sender, EventArgs e)
         {
-
+            timer1.Start();
+            move = Movement.CircleClockwise;
         }
         #endregion
 
@@ -126,7 +128,11 @@ namespace SimpleShapes
                     shape.MoveVerticaly(graphics, pen, borderTop, borderBottom);
                     break;
                 case Movement.BoxClockwise:
-                    shape.MoveBoxClockwise(graphics, pen, borderRight, borderBottom, borderLeft, borderTop);
+                    shape.MoveBoxClockwise(graphics, pen, 
+                            borderRight - 100, borderBottom - 100, borderLeft + 100, borderTop + 100);
+                    break;
+                case Movement.CircleClockwise:
+                    shape.MoveCircleClockwise(graphics, pen, radius);
                     break;
             }
         }

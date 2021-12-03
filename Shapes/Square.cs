@@ -12,6 +12,7 @@ namespace SimpleShapes.Shapes
         public int X { get; set; }
         public int Y { get; set; }
         private int _edge;
+        private double a;
 
         public Square(int x, int y, int edge)
         {
@@ -29,8 +30,7 @@ namespace SimpleShapes.Shapes
         {
             if (movingRight)
                 X += 10;
-
-            if (!movingRight)
+            else
                 X -= 10;
 
             if (X + _edge >= borderRight)
@@ -45,8 +45,7 @@ namespace SimpleShapes.Shapes
         {
             if (movingDown)
                 Y += 10;
-
-            if (!movingDown)
+            else
                 Y -= 10;
 
             if (Y + _edge >= borderBottom)
@@ -62,27 +61,33 @@ namespace SimpleShapes.Shapes
             if (movingRight)
                 X += 10;
 
-            if (!movingRight)
-                X -= 10;
-
-            if (movingDown)
+            if (X + _edge >= borderRight)
+            {
                 Y += 10;
+                movingRight = false;
+            }
 
-            if (!movingDown)
+            if(Y + _edge >= borderBottom)
+            {
+                X -= 10;
+                movingDown = false;
+            }
+
+            if(X <= borderLeft)
                 Y -= 10;
 
-            if (X + _edge == borderRight) // & Y 
-                movingDown = true;
-
-            if (Y + _edge == borderBottom)
-                movingRight = !movingRight;
-
-            if (X == borderLeft)
-                movingDown = !movingDown;
-
-            if (Y == borderTop)
+            if(Y <= borderTop)
                 movingRight = true;
 
+            g.DrawRectangle(pen, X, Y, _edge, _edge);
+        }
+
+        public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
+        {
+            X += (int)(5 * Math.Cos(a));
+            Y += (int)(5 * Math.Sin(a));
+
+            a += 0.1;
 
             g.DrawRectangle(pen, X, Y, _edge, _edge);
         }

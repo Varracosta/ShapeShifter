@@ -61,5 +61,10 @@ namespace SimpleShapes.Shapes
         {
             throw new NotImplementedException();
         }
+
+        public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

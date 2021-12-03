@@ -33,16 +33,18 @@ namespace SimpleShapes.Shapes
         {
             if (movingRight)
             {
-                vertices[0].X += 10;
-                vertices[1].X += 10;
-                vertices[2].X += 10;
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                    vertices[i].X += 10;
+                }
             }
 
             if (!movingRight)
             {
-                vertices[0].X -= 10;
-                vertices[1].X -= 10;
-                vertices[2].X -= 10;
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                    vertices[i].X -= 10;
+                }
             }
 
             if (vertices[1].X >= borderRight)
@@ -58,16 +60,19 @@ namespace SimpleShapes.Shapes
         {
             if (movingDown)
             {
-                vertices[0].Y += 10;
-                vertices[1].Y += 10;
-                vertices[2].Y += 10;
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                    vertices[i].Y += 10;
+                }
             }
 
             if (!movingDown)
             {
-                vertices[0].Y -= 10;
-                vertices[1].Y -= 10;
-                vertices[2].Y -= 10;
+
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                    vertices[i].Y -= 10;
+                }
             }
 
             if (vertices[2].Y >= borderBottom)
@@ -80,6 +85,11 @@ namespace SimpleShapes.Shapes
         }
 
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
             throw new NotImplementedException();
         }
