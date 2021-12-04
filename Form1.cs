@@ -23,7 +23,7 @@ namespace SimpleShapes
     {
         horizontal = 1,
         vertical = 2,
-        boxClockwise = 3,
+        box = 3,
         circular = 4
     }
     public partial class Form1 : Form
@@ -37,7 +37,6 @@ namespace SimpleShapes
 
         Dictionary<string, Color> colors = new Dictionary<string, Color>()
         {
-            {"white", Color.White},
             {"black", Color.Black},
             {"red", Color.Red},
             {"blue", Color.Blue},
@@ -63,7 +62,6 @@ namespace SimpleShapes
         string[] userTextArr = new string[4];
 
         bool isDimensionValid;
-        bool isTextFileGood = true;
         #endregion
 
         public Form1()
@@ -150,7 +148,7 @@ namespace SimpleShapes
             if (!CheckIfShapeIsNull(shape))
             {
                 timer1.Start();
-                move = Movement.boxClockwise;
+                move = Movement.box;
             }
         }
         private void MoveCircleClockwiseBtn_Click(object sender, EventArgs e)
@@ -180,7 +178,7 @@ namespace SimpleShapes
                     case Movement.vertical:
                         shape.MoveVerticaly(graphics, pen, borderTop, borderBottom);
                         break;
-                    case Movement.boxClockwise:
+                    case Movement.box:
                         shape.MoveBoxClockwise(graphics, pen,
                                 borderRight - 50, borderBottom - 50, borderLeft + 50, borderTop + 50);
                         break;
@@ -220,7 +218,6 @@ namespace SimpleShapes
 
             return false;
         }
-
         private void DimensionsTxtBox_Validating(object sender, CancelEventArgs e)
         {
             DimensionValidation(DimensionsTxtBox.Text);
@@ -237,6 +234,7 @@ namespace SimpleShapes
                 errorProvider1.SetError(DimensionsTxtBox, "");
             }
         }
+
         //Checks if dimension is numeric, and matches requieremnts (lesser than 150, greater than 0)
         private void DimensionValidation(string value)
         {
@@ -262,7 +260,6 @@ namespace SimpleShapes
                 ColorPBox.BackColor = color;
             }
         }
-
         private void ChoseFileTxtBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -284,10 +281,6 @@ namespace SimpleShapes
                 ChoseFileTxtBox.Text = fileName;
             }
         }
-        private void ChoseFileTxtBox_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
         private void UploadBtn_Click(object sender, EventArgs e)
         {
             string fileExtension = Path.GetExtension(fileName);
@@ -296,23 +289,18 @@ namespace SimpleShapes
                 errorProvider1.SetError(ChoseFileTxtBox, "File extension must be .txt");
 
             TxtFileValidation();
-
-            if (!isTextFileGood)
-            {
-                ChoseFileTxtBox.BackColor = Color.Red;
-                ChoseFileTxtBox.Text = "Error";
-            }
-            else
-            {
-                ChoseFileTxtBox.BackColor = Color.LightGreen;
-                ChoseFileTxtBox.Text = "All good";
-            }
         }
-
         private void TxtFileValidation()
         {
             //transform all letters to lower case and divide a string of text "into an array" 
             userTextArr = fileText.ToLower().Split(' ');
+
+            //checking length of the string
+            if(userTextArr.Length < 4)
+            {
+                MessageBox.Show("It seems you've missed some parameter (shape, color, dimension, move). " +
+                    "Should be 4 parameters");
+            }
 
             //check if any parameters contain digits (except size/dimension) or error will pop up
             for (int i = 0; i < userTextArr.Length; i++)
@@ -326,7 +314,7 @@ namespace SimpleShapes
                         MessageBox.Show("There are digits on places of shape, movement, or color. " +
                             "Right pattern for this program is: " +
                             "'shape px color movement'. Use another file");
-                        isTextFileGood = false;
+                        break;
                     }
                 }
             }
@@ -336,7 +324,6 @@ namespace SimpleShapes
             {
                 MessageBox.Show("You must specify one of 4 shapes (square, circle, triangle, hexagon) in your file, not some" +
                     "weird stuff");
-                isTextFileGood = false;
             }
 
             //dimmension validation
@@ -345,7 +332,6 @@ namespace SimpleShapes
             {
                 MessageBox.Show("Size of side in your file violates requirements. Value must be numeric, lesser than 150, " +
                     "greater than 0");
-                isTextFileGood = false;
             }
 
             //color validation
@@ -359,26 +345,18 @@ namespace SimpleShapes
             }
 
             if(color == null)
-            {
                 MessageBox.Show("Your color doesn't match requirements, chose another");
-                isTextFileGood = false;
-            }
 
             //movement validation
             if (!Enum.TryParse(userTextArr[3], out move))
-            {
                 MessageBox.Show("You must specify one of 4 movements: horizontal, vertical, circular, box");
-                isTextFileGood = false;
-            }
         }
-
         private void CreateFromFileBtn_Click(object sender, EventArgs e)
         {
             DrawAShape(basicShape);
             timer1.Start();
         }
         #endregion
-
         private void ClearAll()
         {
             DimensionsTxtBox.Clear();

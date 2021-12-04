@@ -74,7 +74,7 @@ namespace SimpleShapes
             this.CreateBtn.Location = new System.Drawing.Point(11, 133);
             this.CreateBtn.Name = "CreateBtn";
             this.CreateBtn.Size = new System.Drawing.Size(76, 35);
-            this.CreateBtn.TabIndex = 0;
+            this.CreateBtn.TabIndex = 6;
             this.CreateBtn.Text = "Create";
             this.CreateBtn.UseVisualStyleBackColor = false;
             this.CreateBtn.Click += new System.EventHandler(this.CreateBtn_Click);
@@ -87,7 +87,7 @@ namespace SimpleShapes
             this.MoveXBtn.Location = new System.Drawing.Point(130, 65);
             this.MoveXBtn.Name = "MoveXBtn";
             this.MoveXBtn.Size = new System.Drawing.Size(86, 43);
-            this.MoveXBtn.TabIndex = 1;
+            this.MoveXBtn.TabIndex = 7;
             this.MoveXBtn.Text = "Horizontaly";
             this.MoveXBtn.UseVisualStyleBackColor = false;
             this.MoveXBtn.Click += new System.EventHandler(this.MoveXBtn_Click);
@@ -115,7 +115,7 @@ namespace SimpleShapes
             this.MoveYBtn.Location = new System.Drawing.Point(227, 65);
             this.MoveYBtn.Name = "MoveYBtn";
             this.MoveYBtn.Size = new System.Drawing.Size(85, 43);
-            this.MoveYBtn.TabIndex = 3;
+            this.MoveYBtn.TabIndex = 8;
             this.MoveYBtn.Text = "Verticaly";
             this.MoveYBtn.UseVisualStyleBackColor = false;
             this.MoveYBtn.Click += new System.EventHandler(this.MoveYBtn_Click);
@@ -127,7 +127,7 @@ namespace SimpleShapes
             this.StopBtn.Location = new System.Drawing.Point(13, 122);
             this.StopBtn.Name = "StopBtn";
             this.StopBtn.Size = new System.Drawing.Size(90, 47);
-            this.StopBtn.TabIndex = 4;
+            this.StopBtn.TabIndex = 10;
             this.StopBtn.Text = "Stop";
             this.StopBtn.UseVisualStyleBackColor = false;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
@@ -138,7 +138,7 @@ namespace SimpleShapes
             this.SquareRadBtn.Location = new System.Drawing.Point(11, 46);
             this.SquareRadBtn.Name = "SquareRadBtn";
             this.SquareRadBtn.Size = new System.Drawing.Size(59, 17);
-            this.SquareRadBtn.TabIndex = 5;
+            this.SquareRadBtn.TabIndex = 1;
             this.SquareRadBtn.TabStop = true;
             this.SquareRadBtn.Text = "Square";
             this.SquareRadBtn.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@ namespace SimpleShapes
             this.TriangleRadBtn.Location = new System.Drawing.Point(11, 69);
             this.TriangleRadBtn.Name = "TriangleRadBtn";
             this.TriangleRadBtn.Size = new System.Drawing.Size(63, 17);
-            this.TriangleRadBtn.TabIndex = 6;
+            this.TriangleRadBtn.TabIndex = 2;
             this.TriangleRadBtn.TabStop = true;
             this.TriangleRadBtn.Text = "Triangle";
             this.TriangleRadBtn.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@ namespace SimpleShapes
             this.MoveBoxClockWiseBtn.Location = new System.Drawing.Point(130, 126);
             this.MoveBoxClockWiseBtn.Name = "MoveBoxClockWiseBtn";
             this.MoveBoxClockWiseBtn.Size = new System.Drawing.Size(86, 43);
-            this.MoveBoxClockWiseBtn.TabIndex = 7;
+            this.MoveBoxClockWiseBtn.TabIndex = 9;
             this.MoveBoxClockWiseBtn.Text = "Box ClockWise";
             this.MoveBoxClockWiseBtn.UseVisualStyleBackColor = false;
             this.MoveBoxClockWiseBtn.Click += new System.EventHandler(this.MoveBoxClockWiseBtn_Click);
@@ -173,7 +173,7 @@ namespace SimpleShapes
             this.DimensionsTxtBox.Location = new System.Drawing.Point(128, 99);
             this.DimensionsTxtBox.Name = "DimensionsTxtBox";
             this.DimensionsTxtBox.Size = new System.Drawing.Size(50, 20);
-            this.DimensionsTxtBox.TabIndex = 8;
+            this.DimensionsTxtBox.TabIndex = 5;
             this.DimensionsTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DimensionsTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.DimensionsTxtBox_Validating);
             // 
@@ -192,7 +192,7 @@ namespace SimpleShapes
             this.CircleRadBtn.Location = new System.Drawing.Point(130, 46);
             this.CircleRadBtn.Name = "CircleRadBtn";
             this.CircleRadBtn.Size = new System.Drawing.Size(51, 17);
-            this.CircleRadBtn.TabIndex = 10;
+            this.CircleRadBtn.TabIndex = 3;
             this.CircleRadBtn.TabStop = true;
             this.CircleRadBtn.Text = "Circle";
             this.CircleRadBtn.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@ namespace SimpleShapes
             this.HexagonRadBtn.Location = new System.Drawing.Point(130, 69);
             this.HexagonRadBtn.Name = "HexagonRadBtn";
             this.HexagonRadBtn.Size = new System.Drawing.Size(68, 17);
-            this.HexagonRadBtn.TabIndex = 11;
+            this.HexagonRadBtn.TabIndex = 4;
             this.HexagonRadBtn.TabStop = true;
             this.HexagonRadBtn.Text = "Hexagon";
             this.HexagonRadBtn.UseVisualStyleBackColor = true;
@@ -257,7 +257,7 @@ namespace SimpleShapes
             this.MoveCircleClockwiseBtn.Location = new System.Drawing.Point(222, 126);
             this.MoveCircleClockwiseBtn.Name = "MoveCircleClockwiseBtn";
             this.MoveCircleClockwiseBtn.Size = new System.Drawing.Size(86, 43);
-            this.MoveCircleClockwiseBtn.TabIndex = 16;
+            this.MoveCircleClockwiseBtn.TabIndex = 10;
             this.MoveCircleClockwiseBtn.Text = "Circle ClockWise";
             this.MoveCircleClockwiseBtn.UseVisualStyleBackColor = false;
             this.MoveCircleClockwiseBtn.Click += new System.EventHandler(this.MoveCircleClockwiseBtn_Click);
@@ -277,25 +277,25 @@ namespace SimpleShapes
             this.UploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.UploadBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.UploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.UploadBtn.Location = new System.Drawing.Point(662, 461);
+            this.UploadBtn.Location = new System.Drawing.Point(672, 461);
             this.UploadBtn.Name = "UploadBtn";
             this.UploadBtn.Size = new System.Drawing.Size(65, 23);
-            this.UploadBtn.TabIndex = 18;
+            this.UploadBtn.TabIndex = 14;
             this.UploadBtn.Text = "Load";
             this.UploadBtn.UseVisualStyleBackColor = false;
             this.UploadBtn.Click += new System.EventHandler(this.UploadBtn_Click);
             // 
             // ChoseFileTxtBox
             // 
+            this.ChoseFileTxtBox.AllowDrop = true;
             this.ChoseFileTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChoseFileTxtBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.ChoseFileTxtBox.Location = new System.Drawing.Point(492, 463);
             this.ChoseFileTxtBox.Name = "ChoseFileTxtBox";
             this.ChoseFileTxtBox.Size = new System.Drawing.Size(164, 20);
-            this.ChoseFileTxtBox.TabIndex = 19;
+            this.ChoseFileTxtBox.TabIndex = 13;
             this.ChoseFileTxtBox.Text = "Chose file...";
             this.ChoseFileTxtBox.Click += new System.EventHandler(this.ChoseFileTxtBox_Click);
-            this.ChoseFileTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.ChoseFileTxtBox_Validating);
             // 
             // panel1
             // 
@@ -351,7 +351,7 @@ namespace SimpleShapes
             this.FasterMoveRateBtn.Location = new System.Drawing.Point(61, 83);
             this.FasterMoveRateBtn.Name = "FasterMoveRateBtn";
             this.FasterMoveRateBtn.Size = new System.Drawing.Size(42, 25);
-            this.FasterMoveRateBtn.TabIndex = 18;
+            this.FasterMoveRateBtn.TabIndex = 12;
             this.FasterMoveRateBtn.Text = "+";
             this.FasterMoveRateBtn.UseVisualStyleBackColor = false;
             this.FasterMoveRateBtn.Click += new System.EventHandler(this.FasterMoveRateBtn_Click);
@@ -364,7 +364,7 @@ namespace SimpleShapes
             this.SlowerMoveRateBtn.Location = new System.Drawing.Point(13, 83);
             this.SlowerMoveRateBtn.Name = "SlowerMoveRateBtn";
             this.SlowerMoveRateBtn.Size = new System.Drawing.Size(42, 25);
-            this.SlowerMoveRateBtn.TabIndex = 17;
+            this.SlowerMoveRateBtn.TabIndex = 11;
             this.SlowerMoveRateBtn.Text = "-";
             this.SlowerMoveRateBtn.UseVisualStyleBackColor = false;
             this.SlowerMoveRateBtn.Click += new System.EventHandler(this.SlowerMoveRateBtn_Click);
@@ -381,14 +381,15 @@ namespace SimpleShapes
             this.CreateFromFileBtn.Location = new System.Drawing.Point(743, 461);
             this.CreateFromFileBtn.Name = "CreateFromFileBtn";
             this.CreateFromFileBtn.Size = new System.Drawing.Size(69, 23);
-            this.CreateFromFileBtn.TabIndex = 22;
+            this.CreateFromFileBtn.TabIndex = 15;
             this.CreateFromFileBtn.Text = "Create";
             this.CreateFromFileBtn.UseVisualStyleBackColor = false;
             this.CreateFromFileBtn.Click += new System.EventHandler(this.CreateFromFileBtn_Click);
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(824, 518);
             this.Controls.Add(this.CreateFromFileBtn);
@@ -398,7 +399,10 @@ namespace SimpleShapes
             this.Controls.Add(this.UploadBtn);
             this.Controls.Add(this.txtFileUploadLbl);
             this.Controls.Add(this.PictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Draw And Move Shapes!";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
