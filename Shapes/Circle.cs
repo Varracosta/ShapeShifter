@@ -12,7 +12,6 @@ namespace SimpleShapes.Shapes
         private int _x;
         private int _y;
         private int _diameter;
-        private double a;
 
         public Circle(int x, int y, int diameter)
         {

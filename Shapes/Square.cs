@@ -12,7 +12,6 @@ namespace SimpleShapes.Shapes
         public int _x { get; set; }
         public int _y { get; set; }
         private int _edge;
-        private double a;
 
         public Square(int x, int y, int edge)
         {

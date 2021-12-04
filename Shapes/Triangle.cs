@@ -13,7 +13,6 @@ namespace SimpleShapes.Shapes
         private int _edge;
         private int _x;
         private int _y;
-        private double a;
         public Triangle(int x, int y, int edge)
         {
             _edge = edge;
