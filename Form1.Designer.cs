@@ -274,14 +274,14 @@ namespace SimpleShapes
             // 
             // UploadBtn
             // 
-            this.UploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.UploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.UploadBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.UploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UploadBtn.Location = new System.Drawing.Point(672, 461);
             this.UploadBtn.Name = "UploadBtn";
             this.UploadBtn.Size = new System.Drawing.Size(65, 23);
             this.UploadBtn.TabIndex = 14;
-            this.UploadBtn.Text = "Load";
+            this.UploadBtn.Text = "Check file";
             this.UploadBtn.UseVisualStyleBackColor = false;
             this.UploadBtn.Click += new System.EventHandler(this.UploadBtn_Click);
             // 
@@ -294,7 +294,7 @@ namespace SimpleShapes
             this.ChoseFileTxtBox.Name = "ChoseFileTxtBox";
             this.ChoseFileTxtBox.Size = new System.Drawing.Size(164, 20);
             this.ChoseFileTxtBox.TabIndex = 13;
-            this.ChoseFileTxtBox.Text = "Chose file...";
+            this.ChoseFileTxtBox.Text = "Click me to load a file";
             this.ChoseFileTxtBox.Click += new System.EventHandler(this.ChoseFileTxtBox_Click);
             // 
             // panel1

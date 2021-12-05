@@ -212,7 +212,7 @@ namespace SimpleShapes
         {
             if (shape == null)
             {
-                MessageBox.Show("You should create a shape to make it move. That's how it works, weirdo");
+                MessageBox.Show("You must create a shape first, or load your file");
                 return true;
             }
             return false;
@@ -290,12 +290,19 @@ namespace SimpleShapes
         //Checks if file has required extension, pops up a message box if not. Calls a method for text file validation
         private void UploadBtn_Click(object sender, EventArgs e)
         {
-            string fileExtension = Path.GetExtension(fileName);
+            if (fileText == null)
+            {
+                MessageBox.Show("Sure you've chosen a file? Check again");
+            }
+            else
+            {
+                string fileExtension = Path.GetExtension(fileName);
 
-            if (fileExtension != ".txt")
-                errorProvider1.SetError(ChoseFileTxtBox, "File extension must be .txt");
+                if (fileExtension != ".txt")
+                    errorProvider1.SetError(ChoseFileTxtBox, "File extension must be .txt");
 
-            TxtFileValidation();
+                TxtFileValidation();
+            }
         }
 
         //Do as it's name says - validates a text file
@@ -366,8 +373,11 @@ namespace SimpleShapes
         //file, but thought I had to reorganize UI, so decided to leave it as is
         private void CreateFromFileBtn_Click(object sender, EventArgs e)
         {
-            DrawAShape(basicShape);
-            timer1.Start();
+            if (!CheckIfShapeIsNull(shape))
+            {
+                DrawAShape(basicShape);
+                timer1.Start();
+            }
         }
         #endregion
     }
