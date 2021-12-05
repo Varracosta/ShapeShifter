@@ -3,7 +3,9 @@
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/fbFBqqSY/ba-dum-tss.png' border='0' alt='ba-dum-tss'/></a></br>
 
 
-Version 0.0.1 
+Version 0.0.1 </br>
+<b>Tested on:</b> Windows 10</br>
+<b>Licence & Contributors:</b> Stacey Radushinskaya (varracosta) (@ starwisperer@gmail.com)</br>
 
 A simple program for creating and moving 4 basic shapes of any (almost) color and any (almost  as well) size. 
 It is also able to read and load parameters from a txt file, and create a moving shape. 
@@ -92,6 +94,4 @@ Or you can drag and drop the file into the said field
 
 
 
-<b>Tested on:</b> Windows 10
 
-<b>Licence & Contributors:</b> Stacey Radushinskaya (varracosta) (@ starwisperer@gmail.com)
