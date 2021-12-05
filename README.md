@@ -5,7 +5,6 @@
 
 Version 0.0.1 </br>
 <b>Tested on:</b> Windows 10</br>
-<b>Licence & Contributors:</b> Stacey Radushinskaya (varracosta) (@ starwisperer@gmail.com)</br>
 
 A simple program for creating and moving 4 basic shapes of any (almost) color and any (almost  as well) size. 
 It is also able to read and load parameters from a txt file, and create a moving shape. 
@@ -86,11 +85,12 @@ So far the program works only on Windows 10 platform.
 2) Click the "Chose file" field under "Upload txt file" label - FileExplorer will open for you to chose your file. 
 Or you can drag and drop the file into the said field
 3) Click "Load"
-4) If no angry Error Message boxes poped up, then you are all clear to create a shape by clicking "Create" button near "Load" btn
+4) If no angry Error Message boxes poped up, then you are all clear to create a shape by clicking "Create" button near "Load" btn </br>
+</br>
 
 
-
-
+<b>Contributors:</b> Stacey Radushinskaya (varracosta) (@ starwisperer@gmail.com)</br>
+<b>Licence & Copyright:</b> Stacey Radushinskaya (varracosta) (@ starwisperer@gmail.com)</br>
 
 
 
