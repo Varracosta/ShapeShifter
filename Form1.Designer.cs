@@ -404,7 +404,7 @@ namespace SimpleShapes
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Draw And Move Shapes!";
+            this.Text = "Shape Shifter";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorPBox)).EndInit();
             this.panel1.ResumeLayout(false);

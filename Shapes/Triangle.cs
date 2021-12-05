@@ -1,94 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace SimpleShapes.Shapes
 {
     class Triangle : Shape
     {
-        private Point[] vertices = new Point[3];
-        private int _edge;
-        private int _x;
-        private int _y;
+        private Point[] vertices = new Point[3];    //stores vertices coordinates of a shape
         public Triangle(int x, int y, int edge)
         {
-            _edge = edge;
-            _x = x;
-            _y = y - edge / 2;
+            EdgeOrDiameter = edge;
+            X = x;
+            Y = y - edge / 2;
 
-            vertices[0] = new Point(_x, _y);
-            vertices[1] = new Point(_x + edge / 2, _y + edge);
-            vertices[2] = new Point(_x - edge / 2, _y + edge);
+            vertices[0] = new Point(X, Y);
+            vertices[1] = new Point(X + edge / 2, Y + edge);
+            vertices[2] = new Point(X - edge / 2, Y + edge);
         }
 
         public override void Draw(Graphics g, Pen pen)
         {
             g.DrawPolygon(pen, vertices);
         }
-
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
-            if (movingRight)
+            if (MovingRight)
                 MoveVerticesXAxis(vertices, 10);
 
-            if (!movingRight)
+            if (!MovingRight)
                 MoveVerticesXAxis(vertices, -10);
 
             if (vertices[1].X >= borderRight)
-                movingRight = !movingRight;
+                MovingRight = !MovingRight;
 
             if (vertices[2].X <= borderLeft)
-                movingRight = true;
+                MovingRight = true;
 
             g.DrawPolygon(pen, vertices);
         }
-
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
-            if (movingDown)
+            if (MovingDown)
                 MoveVerticesYAxis(vertices, 10);
 
-            if (!movingDown)
+            if (!MovingDown)
                 MoveVerticesYAxis(vertices, -10);
 
             if (vertices[2].Y >= borderBottom)
-                movingDown = !movingDown;
+                MovingDown = !MovingDown;
 
             if (vertices[0].Y <= borderTop)
-                movingDown = true;
+                MovingDown = true;
 
             g.DrawPolygon(pen, vertices);
         }
-
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            if (movingRight)
+            if (MovingRight)
                 MoveVerticesXAxis(vertices, 10);
 
-            if (vertices[1].X + _edge >= borderRight)
+            if (vertices[1].X >= borderRight)
             {
                 MoveVerticesYAxis(vertices, 10);
-                movingRight = false;
+                MovingRight = false;
             }
 
-            if (vertices[1].Y + _edge >= borderBottom)
+            if (vertices[1].Y >= borderBottom)
             {
                 MoveVerticesXAxis(vertices, -10);
-                movingDown = false;
+                MovingDown = false;
             }
 
             if (vertices[2].X <= borderLeft)
                 MoveVerticesYAxis(vertices, -10);
 
             if (vertices[0].Y <= borderTop)
-                movingRight = true;
+                MovingRight = true;
 
             g.DrawPolygon(pen, vertices);
         }
-
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
             MoveVerticesCircular(vertices);

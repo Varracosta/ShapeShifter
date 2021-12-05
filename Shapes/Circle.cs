@@ -1,96 +1,88 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleShapes.Shapes
 {
     class Circle : Shape
     {
-        private int _x;
-        private int _y;
-        private int _diameter;
-
         public Circle(int x, int y, int diameter)
         {
-            _x = x - diameter / 2;
-            _y = y - diameter / 2;
-            _diameter = diameter;
+            X = x - diameter / 2;
+            Y = y - diameter / 2;
+            EdgeOrDiameter = diameter;
         }
 
         public override void Draw(Graphics g, Pen pen)
         {
-            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
+            g.DrawEllipse(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
 
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
-            if (movingRight)
-                _x += 10;
+            if (MovingRight)
+                X += 10;
 
-            if (!movingRight)
-                _x -= 10;
+            if (!MovingRight)
+                X -= 10;
 
-            if (_x + _diameter >= borderRight)
-                movingRight = !movingRight;
+            if (X + EdgeOrDiameter >= borderRight)
+                MovingRight = !MovingRight;
 
-            if (_x <= borderLeft)
-                movingRight = true;
+            if (X <= borderLeft)
+                MovingRight = true;
 
-            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
+            g.DrawEllipse(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
 
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
-            if (movingDown)
-                _y += 10;
+            if (MovingDown)
+                Y += 10;
 
-            if (!movingDown)
-                _y -= 10;
+            if (!MovingDown)
+                Y -= 10;
 
-            if (_y + _diameter >= borderBottom)
-                movingDown = !movingDown;
+            if (Y + EdgeOrDiameter >= borderBottom)
+                MovingDown = !MovingDown;
 
-            if (_y <= borderTop)
-                movingDown = true;
+            if (Y <= borderTop)
+                MovingDown = true;
 
-            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
+            g.DrawEllipse(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            if (movingRight)
-                _x += 10;
+            if (MovingRight)
+                X += 10;
 
-            if (_x + _diameter >= borderRight)
+            if (X + EdgeOrDiameter >= borderRight)
             {
-                _y += 10;
-                movingRight = false;
+                Y += 10;
+                MovingRight = false;
             }
 
-            if (_y + _diameter >= borderBottom)
+            if (Y + EdgeOrDiameter >= borderBottom)
             {
-                _x -= 10;
-                movingDown = false;
+                X -= 10;
+                MovingDown = false;
             }
 
-            if (_x <= borderLeft)
-                _y -= 10;
+            if (X <= borderLeft)
+                Y -= 10;
 
-            if (_y <= borderTop)
-                movingRight = true;
+            if (Y <= borderTop)
+                MovingRight = true;
 
-            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
+            g.DrawEllipse(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
 
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
-            _x += (int)(5 * Math.Cos(a));
-            _y += (int)(5 * Math.Sin(a));
-            a += 0.1;
+            X += (int)(5 * Math.Cos(Angle));
+            Y += (int)(5 * Math.Sin(Angle));
+            Angle += 0.1;
 
-            g.DrawEllipse(pen, _x, _y, _diameter, _diameter);
+            g.DrawEllipse(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
     }
 }

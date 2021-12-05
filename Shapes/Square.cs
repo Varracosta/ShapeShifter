@@ -1,104 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace SimpleShapes.Shapes
 {
     class Square : Shape
     {
-        public int _x { get; set; }
-        public int _y { get; set; }
-        private int _edge;
-
         public Square(int x, int y, int edge)
         {
-            _x = x - edge / 2;
-            _y = y - edge / 2;
-            _edge = edge;
+            X = x - edge / 2;
+            Y = y - edge / 2;
+            EdgeOrDiameter = edge;
         }
-
         public override void Draw(Graphics g, Pen pen)
         {
-            g.DrawRectangle(pen, _x, _y, _edge, _edge);
+            g.DrawRectangle(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
-
         public override void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft)
         {
-            if (movingRight)
-                _x += 10;
+            if (MovingRight)
+                X += 10;
             else
-                _x -= 10;
+                X -= 10;
 
-            if (_x + _edge >= borderRight)
-                movingRight = !movingRight;
+            if (X + EdgeOrDiameter >= borderRight)
+                MovingRight = !MovingRight;
 
-            if (_x <= borderLeft)
-                movingRight = true;
+            if (X <= borderLeft)
+                MovingRight = true;
 
-            g.DrawRectangle(pen, _x, _y, _edge, _edge);
+            g.DrawRectangle(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
         public override void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom)
         {
-            if (movingDown)
-                _y += 10;
+            if (MovingDown)
+                Y += 10;
             else
-                _y -= 10;
+                Y -= 10;
 
-            if (_y + _edge >= borderBottom)
-                movingDown = !movingDown;
+            if (Y + EdgeOrDiameter >= borderBottom)
+                MovingDown = !MovingDown;
 
-            if (_y <= borderTop)
-                movingDown = true;
+            if (Y <= borderTop)
+                MovingDown = true;
 
-            g.DrawRectangle(pen, _x, _y, _edge, _edge);
+            g.DrawRectangle(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
         public override void MoveBoxClockwise(Graphics g, Pen pen, int borderRight, int borderBottom, int borderLeft, int borderTop)
         {
-            //Was trying to create more elegant way to move a shape:
+            if (MovingRight)
+                X += 10;
 
-            //if (steps < maxSteps)
-            //{
-            //    pathMovement[counter] += 10;
-            //    steps++;
-            //}
-            //else
-            //    counter++;
-
-            if (movingRight)
-                _x += 10;
-
-            if (_x + _edge >= borderRight)
+            if (X + EdgeOrDiameter >= borderRight)
             {
-                _y += 10;
-                movingRight = false;
+                Y += 10;
+                MovingRight = false;
             }
 
-            if (_y + _edge >= borderBottom)
+            if (Y + EdgeOrDiameter >= borderBottom)
             {
-                _x -= 10;
-                movingDown = false;
+                X -= 10;
+                MovingDown = false;
             }
 
-            if (_x <= borderLeft)
-                _y -= 10;
+            if (X <= borderLeft)
+                Y -= 10;
 
-            if (_y <= borderTop)
-                movingRight = true;
+            if (Y <= borderTop)
+                MovingRight = true;
 
-            g.DrawRectangle(pen, _x, _y, _edge, _edge);
+            g.DrawRectangle(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
-
         public override void MoveCircleClockwise(Graphics g, Pen pen, int radius)
         {
-            _x += (int)(radius * Math.Cos(a));
-            _y += (int)(radius * Math.Sin(a));
+            X += (int)(radius * Math.Cos(Angle));
+            Y += (int)(radius * Math.Sin(Angle));
 
-            a += 0.1;
+            Angle += 0.1;
 
-            g.DrawRectangle(pen, _x, _y, _edge, _edge);
+            g.DrawRectangle(pen, X, Y, EdgeOrDiameter, EdgeOrDiameter);
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SimpleShapes.Movement_Interfaces;
 using System.Drawing;
 
@@ -10,9 +6,13 @@ namespace SimpleShapes.Shapes
 {
     abstract class Shape : IMoveHorizontaly, IMoveVerticaly, IMoveBoxClockwise, IMoveCircleClockwise
     {
-        public bool movingRight = true;
-        public bool movingDown;
-        public double a;
+        protected int X { get; set; }
+        protected int Y { get; set; }
+        protected double Angle { get; set; }
+        protected int EdgeOrDiameter { get; set; }
+        protected bool MovingRight { get; set; } = true;
+        protected bool MovingDown { get; set; }
+
         public abstract void Draw(Graphics g, Pen pen);
         public abstract void MoveHorizontaly(Graphics g, Pen pen, int borderRight, int borderLeft);
         public abstract void MoveVerticaly(Graphics g, Pen pen, int borderTop, int borderBottom);
@@ -36,10 +36,10 @@ namespace SimpleShapes.Shapes
         {
             for (int i = 0; i < vertices.Length; i++)
             {
-                vertices[i].X += (int)(5 * Math.Cos(a));
-                vertices[i].Y += (int)(5 * Math.Sin(a));
+                vertices[i].X += (int)(5 * Math.Cos(Angle));
+                vertices[i].Y += (int)(5 * Math.Sin(Angle));
             }
-            a += 0.1;
+            Angle += 0.1;
         }
     }
 }
