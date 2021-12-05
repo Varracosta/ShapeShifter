@@ -82,8 +82,8 @@ So far the program works only on Windows 10 platform.
 
 <h3>Loading from a txt file</h3>
 1) Create a txt file according to the requrements mentioned above in "Requirements for txt file" section
-2) Click the "Chose file" field under "Upload txt file" label - FileExplorer will open for you to chose your file. 
-3) Click "Load"
+2) Click the "Click me to load a file" field under "Upload txt file" label - FileExplorer will open for you to chose your file. 
+3) Click "Check file"
 4) If no angry Error Message boxes poped up, then you are all clear to create a shape by clicking "Create" button near "Load" btn </br>
 </br>
 
