@@ -67,7 +67,7 @@ So far the program works only on Windows 10 platform.
 
 <h3>Creating a shape:</h3>
 
-1) Load .exe
+1) Click and install setup.exe
 2) Chose one of 4 shapes by clicking according radio button
 3) Enter length of side/diameter (px) to "Edge/diameter" field
 	Note: size should be between 1 - 150 
