@@ -77,11 +77,13 @@ So far the program works only on Windows 10 platform.
 (P.S. Only 1 shape can be created on canvas. An old shape will be deleted if you'll chose to create a new one)
 
 <h3>Moving a shape:</h3>
+
 1) Chose any of 4 movements by clicking according button
 2) Click "+" button to increase the movement rate, and "-" to decrease it. Click "STOP" if you want the shape to... stop
 
 
 <h3>Loading from a txt file</h3>
+
 1) Create a txt file according to the requrements mentioned above in "Requirements for txt file" section
 2) Click the "Click me to load a file" field under "Upload txt file" label - FileExplorer will open for you to chose your file. 
 3) Click "Check file"
