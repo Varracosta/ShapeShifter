@@ -1,6 +1,6 @@
 <h1>ShapeShifter</h1>
 <i>Because it can... shift a shape... *ba dum tss*</i></br>
-<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/fbFBqqSY/ba-dum-tss.png' border='0' alt='ba-dum-tss'/></a></br>
+
 
 
 Version 1.0.0 </br>
