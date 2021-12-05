@@ -4,7 +4,7 @@
 
 
 Version 1.0.0 </br>
-<b>Tested on:</b> Windows 10</br>
+<b>Tested on:</b> Windows 10 (x64)</br>
 
 A simple program for creating and moving 4 basic shapes of any (almost) color and any (almost  as well) size. 
 It is also able to read and load parameters from a txt file, and create a moving shape. 
